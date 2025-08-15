@@ -1,3 +1,16 @@
+---
+title: IoT Sensor Data RAG for Smart Buildings
+emoji: 🏢
+colorFrom: blue
+colorTo: indigo
+sdk: streamlit
+sdk_version: "1.42.1"
+app_file: app.py
+pinned: false
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+
 # IoT Sensor Data RAG for Smart Buildings
 
 ## 🏢 Problem Statement
