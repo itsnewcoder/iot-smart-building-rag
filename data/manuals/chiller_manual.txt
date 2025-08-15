@@ -1,0 +1,10 @@
+Chiller Maintenance Manual
+
+Reset Procedure:
+1. Verify pump status and inlet valves are open.
+2. Hold RESET for 5 seconds until indicator flashes.
+3. Inspect refrigerant level if high temp persists.
+
+Fault Codes:
+- FC-21: Low flow. Check filters and pump.
+- FC-42: High discharge temp. Inspect condenser.

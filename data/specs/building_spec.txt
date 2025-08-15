@@ -1,0 +1,6 @@
+Building Specification - HVAC Summary
+
+- AHU setpoint: 22C, deadband +/-1C
+- Occupancy schedule: 08:00 - 18:00 weekdays
+- Chiller pump rated power: 5 kW
+- Filter replacement interval: 90 days
