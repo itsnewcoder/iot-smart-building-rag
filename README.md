@@ -144,12 +144,6 @@ streamlit run app.py --server.port 8501 --server.address 0.0.0.0
 - **Live Demo**: [https://huggingface.co/spaces/imnikhilraj/iot-smart-building-rag](https://huggingface.co/spaces/imnikhilraj/iot-smart-building-rag)
 - **Source Code**: [https://github.com/itsnewcoder/iot-smart-building-rag](https://github.com/itsnewcoder/iot-smart-building-rag)
 
-## 📄 License
-
-MIT License - feel free to use and modify!
-
----
 
 **Built by Nikhil Raj** 🚀
 
-*Last updated: January 2025*
