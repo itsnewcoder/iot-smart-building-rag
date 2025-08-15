@@ -13,288 +13,143 @@ Check out the configuration reference at https://huggingface.co/docs/hub/spaces-
 
 # IoT Sensor Data RAG for Smart Buildings
 
-## 🏢 Problem Statement
+## 🏢 What I Built
 
-Create a RAG system that processes IoT sensor data, maintenance manuals, and building specifications to provide predictive maintenance insights and operational optimization.
+I created a complete RAG (Retrieval-Augmented Generation) system for smart buildings that:
+- Processes real-time IoT sensor data (temperature, humidity, power)
+- Integrates maintenance manuals and building specifications
+- Provides predictive maintenance insights
+- Detects anomalies in sensor data
+- Gives operational optimization recommendations
 
-## 🎯 Key Requirements
+## 🎯 Key Features
 
-- ✅ **IoT sensor data ingestion and real-time processing**
-- ✅ **Maintenance manual and building specification integration**
-- ✅ **Predictive maintenance algorithm implementation**
-- ✅ **Operational efficiency optimization recommendations**
-- ✅ **Anomaly detection and alert systems**
+- **Real-time IoT Monitoring**: Live sensor data streaming with anomaly detection
+- **Smart Document Search**: Ask questions about maintenance and get AI-powered answers
+- **Predictive Analytics**: Equipment failure prediction and maintenance tips
+- **Modern Dashboard**: Clean Streamlit interface with real-time visualizations
 
-## 🚀 Technical Challenges Solved
+## 🚀 How to Run Locally
 
-- ✅ **Real-time sensor data streaming and processing**
-- ✅ **Multi-sensor data fusion and correlation**
-- ✅ **Predictive modeling for equipment failure**
-- ✅ **Building system integration and compatibility**
-- ✅ **Energy efficiency optimization algorithms**
-
-## 🏗️ System Architecture
-
-### Core Components
-- **RAG Engine**: Vector database (ChromaDB) with Sentence-Transformers embeddings
-- **IoT Data Processor**: Real-time sensor data streaming and anomaly detection
-- **Predictive Analytics**: Equipment failure prediction and maintenance recommendations
-- **Document Intelligence**: PDF/TXT processing with smart chunking strategies
-- **Web Interface**: Modern Streamlit dashboard with Material design theme
-
-### Technology Stack
-- **Backend**: Python, Streamlit, ChromaDB
-- **Embeddings**: Sentence-Transformers (all-MiniLM-L6-v2)
-- **Vector Database**: ChromaDB with cosine similarity
-- **LLM Integration**: Local Transformers + OpenAI API (optional)
-- **Data Processing**: Pandas, NumPy, Scikit-learn
-- **Visualization**: Plotly for real-time sensor monitoring
-
-## 📊 Features
-
-### 1. Real-Time IoT Monitoring
-- Live sensor data streaming simulation
-- Multi-sensor data fusion (temperature, humidity, power consumption)
-- Real-time anomaly detection using rolling z-score analysis
-- Interactive time-series visualizations
-
-### 2. Intelligent Document RAG
-- PDF and TXT document ingestion
-- Smart text chunking (500 tokens with 50 token overlap)
-- Context-aware retrieval using vector similarity
-- Source attribution and relevance scoring
-
-### 3. Predictive Maintenance
-- Equipment failure prediction algorithms
-- Maintenance schedule optimization
-- Energy efficiency recommendations
-- Anomaly-based alert systems
-
-### 4. Evaluation & Analytics
-- Retrieval accuracy metrics
-- Response latency measurement
-- Document relevance scoring
-- System performance monitoring
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Python 3.8+
-- 8GB+ RAM (for local LLM models)
-- Internet connection (for initial model downloads)
-
-### Installation
-
+### Step 1: Clone and Setup
 ```bash
-# Clone the repository
 git clone https://github.com/itsnewcoder/iot-smart-building-rag.git
 cd iot-smart-building-rag
+```
 
-# Create virtual environment
-python -m venv .venv
-.venv\Scripts\activate  # Windows
-# source .venv/bin/activate  # Linux/Mac
-
-# Install dependencies
+### Step 2: Install Dependencies
+```bash
 pip install -r requirements.txt
 ```
 
-### Configuration
-
-Create a `.env` file in the root directory (optional):
-```env
-OPENAI_API_KEY=your_openai_api_key_here
-```
-
-### Run Locally
-
+### Step 3: Run the App
 ```bash
 streamlit run app.py
 ```
 
-**Access your app at:** `http://localhost:8501`
+**Your app will open at:** `http://localhost:8501`
+
+## 🌐 Live Demo
+
+**Try it online:** [https://huggingface.co/spaces/imnikhilraj/iot-smart-building-rag](https://huggingface.co/spaces/imnikhilraj/iot-smart-building-rag)
+
+## 🔧 How to Use
+
+### Dashboard Tab
+1. Click "Start Stream" to begin sensor data simulation
+2. View real-time temperature, humidity, and power readings
+3. See detected anomalies and maintenance recommendations
+
+### RAG QA Tab
+1. Ask questions like "How to reset chiller pump?"
+2. Get AI-powered answers based on maintenance manuals
+3. View source documents and relevance scores
+
+### Evaluation Tab
+1. Test the system with custom queries
+2. See retrieval performance metrics
+3. Check response latency and accuracy
+
+### Data Manager Tab
+1. View indexed documents
+2. Upload new PDFs/TXTs to expand knowledge base
 
 ## 📁 Project Structure
 
 ```
 iot-smart-building-rag/
-├── app.py                      # Main Streamlit application
-├── requirements.txt            # Python dependencies
-├── README.md                   # This file
-├── .streamlit/
-│   └── config.toml            # Streamlit theme configuration
+├── app.py                      # Main Streamlit app
+├── requirements.txt            # Python packages
 ├── rag/                       # RAG system core
-│   ├── __init__.py
-│   ├── ingest.py              # Document ingestion & vector store
-│   ├── retrieval.py           # Context retrieval engine
-│   ├── generate.py            # LLM response generation
-│   └── evaluate.py            # System evaluation metrics
+│   ├── ingest.py              # Document processing
+│   ├── retrieval.py           # Search engine
+│   ├── generate.py            # AI responses
+│   └── evaluate.py            # Performance metrics
 ├── models/                     # Predictive models
-│   ├── __init__.py
-│   └── predictive.py          # Anomaly detection & maintenance
+│   └── predictive.py          # Anomaly detection
 ├── data/                       # Sample data
-│   ├── manuals/               # Maintenance manuals (PDF/TXT)
-│   ├── specs/                 # Building specifications
-│   └── sensors/               # IoT sensor data (CSV)
-└── .chroma/                   # Vector database storage
+│   ├── manuals/               # Maintenance guides
+│   ├── specs/                 # Building specs
+│   └── sensors/               # IoT sensor data
+└── .streamlit/                 # App configuration
 ```
 
-## 🔧 Usage Guide
+## 🧪 Sample Data Included
 
-### 1. Dashboard Tab
-- **Start Stream**: Begin real-time sensor data simulation
-- **Live Monitoring**: View real-time sensor readings and trends
-- **Anomaly Detection**: See detected anomalies with z-score analysis
-- **Maintenance Tips**: Get AI-powered maintenance recommendations
+- **HVAC Sensor Data**: Temperature, humidity, power consumption readings
+- **Chiller Manual**: Maintenance procedures and fault codes
+- **Building Specifications**: System requirements and configurations
 
-### 2. RAG QA Tab
-- **Ask Questions**: Query maintenance procedures and building specs
-- **Context Retrieval**: View relevant document chunks and sources
-- **AI Responses**: Get context-aware answers from local or OpenAI models
+## 🔍 Technical Details
 
-### 3. Evaluation Tab
-- **Retrieval Testing**: Test system with custom queries
-- **Performance Metrics**: View latency and relevance scores
-- **Quality Assessment**: Evaluate RAG system effectiveness
-
-### 4. Data Manager Tab
-- **Document Index**: View indexed documents and sources
-- **File Upload**: Add new PDFs/TXTs to the knowledge base
-- **Vector Store**: Manage document embeddings and storage
-
-## 📈 Sample Queries
-
-Try these example questions in the RAG QA tab:
-
-- "How to reset chiller pump?"
-- "What are the fault codes for HVAC systems?"
-- "How to maintain building temperature sensors?"
-- "What are the power consumption optimization tips?"
-- "How to troubleshoot humidity sensor issues?"
-
-## 🎯 Evaluation Metrics
-
-### Retrieval Quality
-- **Relevance Scoring**: Cosine similarity-based ranking
-- **Source Attribution**: Document source tracking
-- **Context Retrieval**: Top-k document retrieval
-
-### Performance Metrics
-- **Response Latency**: End-to-end query processing time
-- **Throughput**: Queries processed per second
-- **Memory Usage**: Vector database storage efficiency
-
-### RAG Effectiveness
-- **Context Relevance**: Retrieved document quality
-- **Answer Accuracy**: Response relevance to queries
-- **Source Diversity**: Multiple document source utilization
-
-## 🌐 Deployment
-
-### HuggingFace Spaces (Recommended)
-1. Create new Space at [huggingface.co/spaces](https://huggingface.co/spaces)
-2. Choose **Streamlit** as SDK
-3. Upload project files
-4. Set environment variables in Space settings
-
-### Streamlit Cloud
-1. Push code to GitHub
-2. Connect repository at [share.streamlit.io](https://share.streamlit.io)
-3. Deploy automatically
-
-### Local Deployment
-```bash
-# Production server
-streamlit run app.py --server.port 8501 --server.address 0.0.0.0
-```
-
-## 🔍 Technical Implementation Details
-
-### Embedding Strategy
-- **Model**: `sentence-transformers/all-MiniLM-L6-v2`
-- **Dimensions**: 384
-- **Normalization**: L2 normalization for cosine similarity
+- **Embeddings**: Sentence-Transformers (all-MiniLM-L6-v2)
+- **Vector Database**: ChromaDB with cosine similarity
+- **LLM**: Local Transformers + OpenAI API (optional)
+- **Anomaly Detection**: Rolling z-score analysis
 - **Chunking**: 500 tokens with 50 token overlap
 
-### Vector Database
-- **Database**: ChromaDB
-- **Similarity**: Cosine distance
-- **Persistence**: Local file storage (.chroma directory)
-- **Indexing**: HNSW algorithm for fast retrieval
+## 📊 What I Achieved
 
-### Anomaly Detection
-- **Method**: Rolling z-score analysis
-- **Window Size**: 50 data points
-- **Threshold**: Z-score > 3.0
-- **Metrics**: Temperature, humidity, power consumption
+✅ **IoT Data Processing**: Real-time sensor streaming and analysis
+✅ **Document RAG**: Intelligent search through manuals and specs
+✅ **Predictive Maintenance**: Equipment failure prediction algorithms
+✅ **Anomaly Detection**: Statistical analysis for sensor anomalies
+✅ **Modern UI**: Professional Streamlit dashboard
+✅ **Evaluation Metrics**: Performance testing and quality assessment
 
-### Predictive Maintenance
-- **Algorithm**: Rule-based heuristics + statistical analysis
-- **Input**: Sensor data + anomaly patterns
-- **Output**: Maintenance recommendations + efficiency tips
-- **Real-time**: Continuous monitoring and updates
+## 🎓 Academic Project
 
-## 🧪 Testing
+This project demonstrates:
+- Complete RAG system implementation
+- IoT data integration and processing
+- Predictive analytics for smart buildings
+- Vector database usage (ChromaDB)
+- Modern web application development
 
-### Local Testing
+## 🚀 Deployment
+
+### Local Development
 ```bash
-# Test RAG modules
-python -c "from rag.ingest import ensure_vector_store; print('✅ RAG Ready')"
-
-# Test predictive models
-python -c "from models.predictive import detect_anomalies; print('✅ Models Ready')"
-
-# Test full application
 streamlit run app.py
 ```
 
-### Sample Data
-The system includes sample data for testing:
-- **HVAC Sensor Data**: Temperature, humidity, power readings
-- **Chiller Manual**: Maintenance procedures and fault codes
-- **Building Specs**: System specifications and requirements
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🎓 Academic Use
-
-This project was developed as part of an academic RAG system implementation course. It demonstrates:
-
-- **RAG Architecture**: Complete retrieval-augmented generation system
-- **IoT Integration**: Real-time sensor data processing
-- **Predictive Analytics**: Machine learning for maintenance
-- **Vector Databases**: ChromaDB implementation
-- **Modern Web UI**: Streamlit-based dashboard
+### Production Server
+```bash
+streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+```
 
 ## 📞 Support
 
-For questions or issues:
-- **GitHub Issues**: [Create an issue](https://github.com/itsnewcoder/iot-smart-building-rag/issues)
-- **Documentation**: Check this README and code comments
-- **Community**: Streamlit and HuggingFace communities
+- **GitHub Issues**: [Report bugs here](https://github.com/itsnewcoder/iot-smart-building-rag/issues)
+- **Live Demo**: [https://huggingface.co/spaces/imnikhilraj/iot-smart-building-rag](https://huggingface.co/spaces/imnikhilraj/iot-smart-building-rag)
+- **Source Code**: [https://github.com/itsnewcoder/iot-smart-building-rag](https://github.com/itsnewcoder/iot-smart-building-rag)
 
-## 🚀 Future Enhancements
+## 📄 License
 
-- [ ] Real-time IoT device integration
-- [ ] Advanced ML models for failure prediction
-- [ ] Multi-modal document support (images, audio)
-- [ ] API endpoints for external systems
-- [ ] Mobile-responsive interface
-- [ ] Advanced analytics dashboard
-- [ ] Integration with building management systems
+MIT License - feel free to use and modify!
 
 ---
 
-**Built with ❤️ for Smart Building Intelligence**
+**Built by Nikhil Raj** 🚀
 
 *Last updated: January 2025*
